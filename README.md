@@ -69,8 +69,13 @@ Remove-ADUser -Identity "CN=FrendonReyes,OU=Kuben-IT,DC=Angelito,DC=local" -Conf
 ```
 #### ADD A Single user in OU
 ```
-
+New-ADUser -Name "John Doe" -GivenName "John" -Surname "Doe" -SamAccountName "jdoe" -UserPrincipalName "jdoe@example.com" -Path "OU=<NAME OF OU>,DC=<FIRST DOMAIN NAME>,DC=<local>" -AccountPassword (ConvertTo-SecureString "<CREATE STRONG PASSWORD>" -AsPlainText -Force) -Enabled $true
+```
+#### EXAMPLE:
+```
+New-ADUser -Name "John Doe" -GivenName "John" -Surname "Doe" -SamAccountName "jdoe" -UserPrincipalName "jdoe@angelito.local" -Path "OU=Kuben-IT,DC=angelito,DC=local" -AccountPassword (ConvertTo-SecureString "Password123!" -AsPlainText -Force) -Enabled $true
 ```
 #### ADD Multiple Users in OU Using Powershell IIS 
+
 
 
