@@ -1,4 +1,4 @@
-# IT-DRIFT-SCHOOL_SERVER-
+# IT-DRIFT-SCHOOL-SERVER
 
 ## Powershell Recommendation  (ADD, DNS, DHCP, FS-fileserver, IIS)
 
@@ -59,14 +59,7 @@ New-ADOrganizationalUnit -Name "<SET YOUR OWN NAME>" -path "DC=<FIRST DOMAIN NAM
 ```
 Get-ADOrganizationalUnit -Filter * -SearchBase "DC=<FIRST DOMAIN NAME>,DC=<local>"
 ```
-#### To Remove User From OU
-```
-Remove-ADUser -Identity "CN=<NAME OF THE USER>,OU=<NAME OF OU>,DC=<FIRST DOMAIN NAME>,DC=<local>" -Confirm$false
-```
-#### Example:
-```
-Remove-ADUser -Identity "CN=FrendonReyes,OU=Kuben-IT,DC=Angelito,DC=local" -Confirm$false
-```
+
 #### ADD A Single user in OU
 ```
 New-ADUser -Name "John Doe" -GivenName "John" -Surname "Doe" -SamAccountName "jdoe" -UserPrincipalName "jdoe@example.com" -Path "OU=<NAME OF OU>,DC=<FIRST DOMAIN NAME>,DC=<local>" -AccountPassword (ConvertTo-SecureString "<CREATE STRONG PASSWORD>" -AsPlainText -Force) -Enabled $true
@@ -75,6 +68,16 @@ New-ADUser -Name "John Doe" -GivenName "John" -Surname "Doe" -SamAccountName "jd
 ```
 New-ADUser -Name "John Doe" -GivenName "John" -Surname "Doe" -SamAccountName "jdoe" -UserPrincipalName "jdoe@angelito.local" -Path "OU=Kuben-IT,DC=angelito,DC=local" -AccountPassword (ConvertTo-SecureString "Password123!" -AsPlainText -Force) -Enabled $true
 ```
+
+#### To Remove User From OU
+```
+Remove-ADUser -Identity "CN=<NAME OF THE USER>,OU=<NAME OF OU>,DC=<FIRST DOMAIN NAME>,DC=<local>" -Confirm$false
+```
+#### Example:
+```
+Remove-ADUser -Identity "CN=FrendonReyes,OU=Kuben-IT,DC=Angelito,DC=local" -Confirm$false
+```
+
 #### ADD Multiple Users in OU Using Powershell IIS 
 
 
