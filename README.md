@@ -1,6 +1,6 @@
 # IT-DRIFT-SCHOOL_SERVER-
 
-## Powershell Recomendation  (ADD, DNS, DHCP, FS-fileserver, IIS)
+## Powershell Recommendation  (ADD, DNS, DHCP, FS-fileserver, IIS)
 
 ```
 Get-WindowFeature
@@ -11,7 +11,7 @@ Install-WindowsFeature -Name Web-Webserver -IncludeAllsubFeature -InculdeManagem
 ```
 
 ## Set Static IP Address
-### NOTE THIS METHOD WILL LOSE THE INTERNET
+### !!!NOTE THIS METHOD WILL LOSE THE INTERNET!!!
 ### Get ifIndex
 ```
 Get-Netadapter
@@ -45,7 +45,7 @@ Add-DhcpServerv4Scope -Name "<Set Your own Name>" -StartRange <Your IPAddress>.1
 ```
 Add-DhcpServerv4Scope -Name "Kubennett" -StartRange 192.168.5.100 -EndRange 192.168.5.200 -SubnetMask 255.255.255.0 -State Active
 ```
-#### RESTART THE DHCP-SERVER
+#### Restart the DHCP-server
 ```
 restart-service DHCPServer
 ```
@@ -53,11 +53,24 @@ restart-service DHCPServer
 
 ## Create OrganizationalUNIT(OU)
 ```
-New-ADOrganizationalUnit -Name "<Set your own name>" -path "DC=<FIRST DOMAIN NAME>,DC=<local>"
+New-ADOrganizationalUnit -Name "<SET YOUR OWN NAME>" -path "DC=<FIRST DOMAIN NAME>,DC=<local>"
 ```
 #### To Check the OU
 ```
 Get-ADOrganizationalUnit -Filter * -SearchBase "DC=<FIRST DOMAIN NAME>,DC=<local>"
 ```
+#### To Remove User From OU
+```
+Remove-ADUser -Identity "CN=<NAME OF THE USER>,OU=<NAME OF OU>,DC=<FIRST DOMAIN NAME>,DC=<local>" -Confirm$false
+```
+#### Example:
+```
+Remove-ADUser -Identity "CN=FrendonReyes,OU=Kuben-IT,DC=Angelito,DC=local" -Confirm$false
+```
+#### ADD A Single user in OU
+```
+
+```
+#### ADD Multiple Users in OU Using Powershell IIS 
 
 
