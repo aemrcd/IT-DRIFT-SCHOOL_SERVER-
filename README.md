@@ -11,7 +11,7 @@ Install-WindowsFeature -Name Web-Webserver -IncludeAllsubFeature -InculdeManagem
 ```
 
 ## Set Static IP Address
-### !!!NOTE THIS METHOD WILL LOSE THE INTERNET!!!
+
 ### Get ifIndex
 ```
 Get-Netadapter
