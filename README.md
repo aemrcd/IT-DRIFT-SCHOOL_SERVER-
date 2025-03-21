@@ -79,6 +79,40 @@ Remove-ADUser -Identity "CN=FrendonReyes,OU=Kuben-IT,DC=Angelito,DC=local" -Conf
 ```
 
 #### ADD Multiple Users in OU Using Powershell IIS 
+```
+# Import Active Directory module
+Import-Module ActiveDirectory
 
+# Define CSV file path
+$csvfile = "C:\Users\Administrator\Desktop\test.csv" <USE>
+
+# Import users from CSV
+$users = Import-Csv -Path $csvfile
+
+# Loop through each user in CSV
+foreach ($user in $users) {
+    $FirstName = $user.Name
+    $GivenName = $user.GivenName
+    $LastName = $user.Surname
+    $DisplayName = $user.DisplayName
+    $Username = $user.SAMAccountName
+    $Password = $user.Password
+    $Description = $user.Description
+    $OU = $user.OU
+
+    # Create new Active Directory user
+    New-ADUser -Name "$FirstName $LastName" `
+        -GivenName $GivenName `
+        -Surname $LastName `
+        -DisplayName $DisplayName `
+        -SamAccountName $Username `
+        -AccountPassword (ConvertTo-SecureString $Password -AsPlainText -Force) `
+        -Description $Description `
+        -Path $OU `
+        -Enabled $true `
+        -PassThru
+}
+
+```
 
 
