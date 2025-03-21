@@ -1,0 +1,9 @@
+Name,GivenName,Surname,DisplayName,SAMAccountName,Password,Description,OU
+David Guy,David,Guy,Dave R. Guy,Dave,Password123!,Customer Appreciation Manager,"OU=ARL-Department,DC=Angelito,DC=local"
+Alfredo Fettucine,Alfredo,Fettucine,Alfie NoNose,Alfie,Password123!,Shop Foreman,"OU=ARL-Department,DC=Angelito,DC=local"
+Stanley Behr,Stanley,Behr,Stanley T. Behr,Stanley,Password123!,Webmaster,"OU=ARL-Department,DC=Angelito,DC=local"
+Priscilla Catz,Priscilla,Catz,Dame Priscilla,Priscilla,Password1231,Shop Steward,"OU=ARL-Department,DC=Angelito,DC=local"
+Harold Catz,Harold,Catz,Harold S. Catz,Harold,Password123!,Engineering Manager,"OU=ARL-Department,DC=Angelito,DC=local"
+William Wallace,William,Wallace,Sir William Wallace,Wally,Password123!,Marketing Manager,"OU=ARL-Department,DC=Angelito,DC=local"
+Trey Barkdale,Trey,Barkdale,Lord Barksalot,Trey,Password123!,Sales Manager,"OU=ARL-Department,DC=Angelito,DC=local"
+Charlie Russel,Charlie,Russel,Charlie Russel,Charlie,Password123!,SuperUser Account,"OU=ARL-Department,DC=Angelito,DC=local"
