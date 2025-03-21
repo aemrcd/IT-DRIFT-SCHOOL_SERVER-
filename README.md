@@ -84,7 +84,7 @@ Remove-ADUser -Identity "CN=FrendonReyes,OU=Kuben-IT,DC=Angelito,DC=local" -Conf
 Import-Module ActiveDirectory
 
 # Define CSV file path
-$csvfile = "C:\Users\Administrator\Desktop\test.csv" <USE>
+$csvfile = "C:\Users\Administrator\Desktop\test.csv" <USE THE CSV FILE IN THE RESPOSITORY>
 
 # Import users from CSV
 $users = Import-Csv -Path $csvfile
