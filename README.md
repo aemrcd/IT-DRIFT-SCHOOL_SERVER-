@@ -14,7 +14,7 @@ A guide to setting up and managing an IT server environment using PowerShell for
 
 ---
 
-## **🚀 Powershell Recommendations** <a name="powershell-recommendations"></a>
+#### **🚀 Powershell Recommendations** <a name="powershell-recommendations"></a>
 Install necessary Windows features for ADD, DNS, DHCP, File Server, and IIS. ⚙️
 
 ```
@@ -25,7 +25,7 @@ Install-WindowsFeature -Name AD-Domain-Services -IncludeAllSubFeature -IncludeMa
 Install-WindowsFeature -Name Web-Webserver -IncludeAllSubFeature -IncludeManagementTools
 ```
 
-## 🌐 Set Static IP Address
+#### 🌐 Set Static IP Address
 
 ### Get ifIndex
 ```
