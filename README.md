@@ -136,7 +136,7 @@ foreach ($user in $users) {
 'New-VMSwitch -Name "<Set Name>" -NetAdapterName "<Set Name>" -AllowManagementOS $true
 ```
 #### Example 
-```
+```powershell
 New-VMSwitch -Name "VLAN01Switch" -NetAdapterName "Ethernet" -AllowManagementOS $true
 ```
 
