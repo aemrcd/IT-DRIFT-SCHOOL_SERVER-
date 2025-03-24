@@ -4,12 +4,12 @@ A guide to setting up and managing an IT server environment using PowerShell for
 
 ---
 
-## **📚 Table of Contents**
+## **📖 Table of Contents**
 1. [🚀 Powershell Recommendations](#powershell-recommendations)
 2. [🌐 Set Static IP Address](#set-static-ip-address)
 3. [📡 Create DHCP Server & Set Scope](#create-dhcp-server--set-dhcpserverscope)
 4. [📂 Create Organizational Unit (OU)](#create-organizationalunitou)
-5. [👤 Add/Remove Users in OU](#add-a-single-user-in-ou)
+5. [🧑🏻 Add/Remove Users in OU](#add-a-single-user-in-ou)
 6. [👥 Add Multiple Users Using CSV](#add-multiple-users-in-ou-using-powershell-iis)
 
 ---
