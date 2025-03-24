@@ -45,7 +45,7 @@ Get-NetIPAddress
 ```
 
 
-## 📡Create DHCP server & Set DHCPServerscope
+#### 📡Create DHCP server & Set DHCPServerscope
 ```
 Add-DhcpServerInDC -DnsName "<PLACE YOUR DOMAINNAME>" -IPAddress <PLACE YOUR OWN GATEWAY>
 ```
