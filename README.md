@@ -1,6 +1,6 @@
 # **💻 IT-DRIFT-SCHOOL-SERVER 🖥️**
 
-A guide to setting up and managing an IT server environment using PowerShell for ADD, DNS, DHCP, File Server, and IIS configurations.
+A guide to setting up and managing an IT server environment using PowerShell for ADD, DNS, DHCP, File Server, Hyper-V and IIS configurations.
 
 ---
 
@@ -23,6 +23,7 @@ Install-WindowsFeature -Name ADD -IncludeAllSubFeature -IncludeManagementTools
 Install-WindowsFeature -Name DHCP -IncludeAllSubFeature -IncludeManagementTools
 Install-WindowsFeature -Name AD-Domain-Services -IncludeAllSubFeature -IncludeManagementTools
 Install-WindowsFeature -Name Web-Webserver -IncludeAllSubFeature -IncludeManagementTools
+install-WindowsFeature -Name Hyper-V -IncludeManagementTools
 ```
 
 ### 🌐 Set Static IP Address
@@ -130,4 +131,12 @@ foreach ($user in $users) {
 
 ```
 
+### 🖥️ Create a virtual switch in Hyper-V
+```powershell
+'New-VMSwitch -Name "<Set Name>" -NetAdapterName "<Set Name>" -AllowManagementOS $true
+```
+#### Example 
+```
+New-VMSwitch -Name "VLAN01Switch" -NetAdapterName "Ethernet" -AllowManagementOS $true
+```
 
