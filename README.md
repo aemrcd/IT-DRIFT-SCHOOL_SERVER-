@@ -5,12 +5,12 @@ A guide to setting up and managing an IT server environment using PowerShell for
 ---
 
 ## **📖 Table of Contents**
-1. [🚀 Powershell Recommendations](#powershell-recommendations)
-2. [🌐 Set Static IP Address](#set-static-ip-address)
+1. [🚀 Powershell Recommendations](#-powershell-recommendations-)
+2. [🌐 Set Static IP Address](#-set-static-ip-address)
 3. [📡 Create DHCP Server & Set Scope](#create-dhcp-server--set-dhcpserverscope)
-4. [📂 Create Organizational Unit (OU)](#create-organizationalunitou)
-5. [🧑🏻 Add/Remove Users in OU](#add-a-single-user-in-ou)
-6. [👥 Add Multiple Users Using CSV](#add-multiple-users-in-ou-using-powershell-iis)
+4. [📂 Create Organizational Unit (OU)](#create-dhcp-server--set-dhcpserverscope)
+5. [🧑🏻 Add/Remove Users in OU](#-add-a-single-user-in-ou)
+6. [👥 Add Multiple Users Using CSV](#-add-multiple-users-in-ou-using-powershell-iis)
 
 ---
 
@@ -25,7 +25,7 @@ Install-WindowsFeature -Name AD-Domain-Services -IncludeAllSubFeature -IncludeMa
 Install-WindowsFeature -Name Web-Webserver -IncludeAllSubFeature -IncludeManagementTools
 ```
 
-## Set Static IP Address
+## 🌐 Set Static IP Address
 
 ### Get ifIndex
 ```
@@ -45,7 +45,7 @@ Get-NetIPAddress
 ```
 
 
-## Create DHCP server & Set DHCPServerscope
+## 📡Create DHCP server & Set DHCPServerscope
 ```
 Add-DhcpServerInDC -DnsName "<PLACE YOUR DOMAINNAME>" -IPAddress <PLACE YOUR OWN GATEWAY>
 ```
@@ -66,7 +66,7 @@ restart-service DHCPServer
 ```
 
 
-#### Create OrganizationalUNIT(OU)
+#### 📂 Create OrganizationalUNIT(OU)
 ```
 New-ADOrganizationalUnit -Name "<SET YOUR OWN NAME>" -path "DC=<FIRST DOMAIN NAME>,DC=<local>"
 ```
@@ -75,7 +75,7 @@ New-ADOrganizationalUnit -Name "<SET YOUR OWN NAME>" -path "DC=<FIRST DOMAIN NAM
 Get-ADOrganizationalUnit -Filter * -SearchBase "DC=<FIRST DOMAIN NAME>,DC=<local>"
 ```
 
-#### ADD A Single user in OU
+#### 🧑🏻 ADD A Single user in OU
 ```
 New-ADUser -Name "John Doe" -GivenName "John" -Surname "Doe" -SamAccountName "jdoe" -UserPrincipalName "jdoe@example.com" -Path "OU=<NAME OF OU>,DC=<FIRST DOMAIN NAME>,DC=<local>" -AccountPassword (ConvertTo-SecureString "<CREATE STRONG PASSWORD>" -AsPlainText -Force) -Enabled $true
 ```
@@ -93,7 +93,7 @@ Remove-ADUser -Identity "CN=<NAME OF THE USER>,OU=<NAME OF OU>,DC=<FIRST DOMAIN 
 Remove-ADUser -Identity "CN=FrendonReyes,OU=Kuben-IT,DC=Angelito,DC=local" -Confirm$false
 ```
 
-#### ADD Multiple Users in OU Using Powershell IIS 
+#### 👥 ADD Multiple Users in OU Using Powershell IIS 
 ```
 # Import Active Directory module
 Import-Module ActiveDirectory
