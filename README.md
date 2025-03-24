@@ -1,13 +1,28 @@
-# IT-DRIFT-SCHOOL-SERVER
+# **💻 IT-DRIFT-SCHOOL-SERVER 🖥️**
 
-## Powershell Recommendation  (ADD, DNS, DHCP, FS-fileserver, IIS)
+A guide to setting up and managing an IT server environment using PowerShell for ADD, DNS, DHCP, File Server, and IIS configurations.
+
+---
+
+## **📚 Table of Contents**
+1. [🚀 Powershell Recommendations](#powershell-recommendations)
+2. [🌐 Set Static IP Address](#set-static-ip-address)
+3. [📡 Create DHCP Server & Set Scope](#create-dhcp-server--set-dhcpserverscope)
+4. [📂 Create Organizational Unit (OU)](#create-organizationalunitou)
+5. [👤 Add/Remove Users in OU](#add-a-single-user-in-ou)
+6. [👥 Add Multiple Users Using CSV](#add-multiple-users-in-ou-using-powershell-iis)
+
+---
+
+## **🚀 Powershell Recommendations** <a name="powershell-recommendations"></a>
+Install necessary Windows features for ADD, DNS, DHCP, File Server, and IIS. ⚙️
 
 ```
-Get-WindowFeature
-Install-WindowsFeature -Name ADD -IncludeAllsubFeature -InculdeManagementTools 
-install-WindowsFeature -Name DHCP -IncludeAllsubFeature -IncludeManagementTools
+Get-WindowsFeature
+Install-WindowsFeature -Name ADD -IncludeAllSubFeature -IncludeManagementTools
+Install-WindowsFeature -Name DHCP -IncludeAllSubFeature -IncludeManagementTools
 Install-WindowsFeature -Name AD-Domain-Services -IncludeAllSubFeature -IncludeManagementTools
-Install-WindowsFeature -Name Web-Webserver -IncludeAllsubFeature -InculdeManagementTools 
+Install-WindowsFeature -Name Web-Webserver -IncludeAllSubFeature -IncludeManagementTools
 ```
 
 ## Set Static IP Address
@@ -51,7 +66,7 @@ restart-service DHCPServer
 ```
 
 
-## Create OrganizationalUNIT(OU)
+#### Create OrganizationalUNIT(OU)
 ```
 New-ADOrganizationalUnit -Name "<SET YOUR OWN NAME>" -path "DC=<FIRST DOMAIN NAME>,DC=<local>"
 ```
